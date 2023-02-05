@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/drawable/background_anim.xml" value="0.1" />
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/drawable/background_anim1.xml" value="0.1075" />
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/drawable/background_anim2.xml" value="0.1" />
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/drawable/background_anim3.xml" value="0.1" />
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/drawable/button_drawable.xml" value="0.1225" />
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/drawable/button_raz.xml" value="0.2365" />
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/drawable/gradient_list.xml" value="0.1" />
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/drawable/mainbutton.xml" value="0.1" />
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/layout-land/activity_main.xml" value="0.2054673721340388" />
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/layout-land/activity_second.xml" value="0.2988679352838745" />
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/layout-land/activity_third.xml" value="0.2089041095890411" />
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/layout-land/main_activity.xml" value="0.2988679352838745" />
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/layout/activity_main.xml" value="0.2988679352838745" />
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/layout/activity_second.xml" value="0.2988679352838745" />
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/layout/activity_third.xml" value="0.4528302049755674" />
+        <entry key="..\:/Users/louis/OneDrive/Documents/B3/Android/Projet_final/app/src/main/res/layout/main_activity.xml" value="0.15678824721377912" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17_PREVIEW" project-jdk-name="corretto-17" project-jdk-type="JavaSDK" />
+  <component name="ProjectType">
+    <option name="id" value="jpab" />
+  </component>
+</project>

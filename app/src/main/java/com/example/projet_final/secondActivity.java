@@ -34,7 +34,7 @@ public class secondActivity extends AppCompatActivity {
     Button graphBtn = null;
     RadioGroup group = null;
     Spinner liste;
-    MediaPlayer mediaPlayer,mediaPlayerIMC,mediaPlayerRAZ,mediaPlayerClear;
+    MediaPlayer mediaPlayer,mediaPlayerIMC,mediaPlayerclick,mediaPlayerClear;
     public final static String ResultatIMC = "Resultat.IMC";
     String defaut = "Entrez vos mesures. Vous devez cliquer sur le bouton « Calculer l'IMC » pour obtenir un résultat.";
     AlertDialog.Builder builder;
@@ -72,7 +72,7 @@ public class secondActivity extends AppCompatActivity {
         //sound
         mediaPlayer = MediaPlayer.create(secondActivity.this,R.raw.error);
         mediaPlayerIMC= MediaPlayer.create(secondActivity.this,R.raw.calcul_imc);
-        mediaPlayerRAZ= MediaPlayer.create(secondActivity.this,R.raw.click);
+        mediaPlayerclick= MediaPlayer.create(secondActivity.this,R.raw.click);
         mediaPlayerClear= MediaPlayer.create(secondActivity.this,R.raw.clear);
         //megafonction
         megaF = (CheckBox) findViewById(R.id.checkBox);
@@ -104,7 +104,7 @@ public class secondActivity extends AppCompatActivity {
             //message
             petit_message = (TextView) findViewById(R.id.petit_message);
             //empty input
-            if(poids.getText().toString().trim().isEmpty() || taille.getText().toString().trim().isEmpty() || poids.getText().toString().trim().equals("O") || taille.getText().toString().trim().equals("0")){
+            if(poids.getText().toString().isEmpty() || taille.getText().toString().isEmpty() || poids.getText().toString().trim().equals("O") || taille.getText().toString().trim().equals("0")){
                 Toast.makeText(getApplicationContext(),"Entrer un poids et une taille",
                         Toast.LENGTH_SHORT).show();
             }
@@ -116,10 +116,11 @@ public class secondActivity extends AppCompatActivity {
     private final View.OnClickListener razListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            mediaPlayerRAZ.start();
+            mediaPlayerclick.start();
             if (poids.getText().toString().trim().isEmpty() || taille.getText().toString().trim().isEmpty() || poids.getText().toString().trim().equals("O") || taille.getText().toString().trim().equals("0")){
                 Toast.makeText(getApplicationContext(),"Entrer un poids et une taille",
                         Toast.LENGTH_SHORT).show();
+                mediaPlayer.start();
             }else {
                 //using string.xml
                 builder.setMessage(R.string.dialog_message) .setTitle(R.string.dialog_title);
@@ -205,6 +206,7 @@ public class secondActivity extends AppCompatActivity {
             if(poids.getText().toString().trim().isEmpty() || taille.getText().toString().trim().isEmpty()){
                 Toast.makeText(getApplicationContext(),"Entrer un poids et une taille",
                         Toast.LENGTH_SHORT).show();
+                mediaPlayer.start();
             }else{
                 RadioButton centiradio = findViewById(R.id.radioCenti);
                 String weightString = String.valueOf(poids.getText());
@@ -230,11 +232,10 @@ public class secondActivity extends AppCompatActivity {
 
                     if(centiradio.isChecked()){
                         imc = (weightStringVal/((heightStringVal/100)*(heightStringVal/100)));
-
-
                     }else{
                         imc = weightStringVal/(heightStringVal*heightStringVal);
                     }
+
                     //category imc
                     if (imc < 18.5) {
                         category = "Sous poids";
@@ -297,17 +298,24 @@ public class secondActivity extends AppCompatActivity {
             RadioButton centiradio = findViewById(R.id.radioCenti);
             String heightString = String.valueOf(taille.getText());
             Double heightStringVal = Double.parseDouble(heightString);
-            if (poids.getText().toString().trim().isEmpty() || taille.getText().toString().trim().isEmpty() || poids.getText().toString().trim().equals("O") || taille.getText().toString().trim().equals("0")){
+            if (poids.getText().toString().isEmpty() || taille.getText().toString().isEmpty() || poids.getText().toString().trim().equals("O") || taille.getText().toString().trim().equals("0")){
                 Toast.makeText(getApplicationContext(),"Entrer un poids et une taille",
                         Toast.LENGTH_SHORT).show();
-            }else if(centiradio.isChecked()&&(heightStringVal>100 && heightStringVal<250)){
+                mediaPlayer.start();
+            }else{
                 Intent GraphActivity = new Intent(secondActivity.this, thirdActivity.class);
                 GraphActivity.putExtra("Poids", String.valueOf(poids.getText()));
-                GraphActivity.putExtra("Taille", String.valueOf(taille.getText()));
+                if(centiradio.isChecked()&&(heightStringVal>100 && heightStringVal<250)){
+                    GraphActivity.putExtra("Taille", String.valueOf(taille.getText()));
+                }else if(!centiradio.isChecked() || (heightStringVal>1 && heightStringVal<2.5)){
+                    Double heightmeter= heightStringVal*100;
+                    GraphActivity.putExtra("Taille",String.valueOf(heightmeter));
+
+                    //Toast.makeText(getApplicationContext(),"La taille en cm",
+                    //Toast.LENGTH_SHORT).show();
+                }
+                mediaPlayerclick.start();
                 startActivity(GraphActivity);
-            }else if(!centiradio.isChecked() || (heightStringVal>1 && heightStringVal<2.5)){
-                Toast.makeText(getApplicationContext(),"La taille en cm",
-                        Toast.LENGTH_SHORT).show();
             }
 
 

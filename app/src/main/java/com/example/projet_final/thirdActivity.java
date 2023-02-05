@@ -146,12 +146,12 @@ public class thirdActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         String poids= bundle.getString("Poids");
-
         String taille = bundle.getString("Taille");
 
         imcValues=new PointsGraphSeries(new DataPoint[]{
                 new DataPoint(Double.parseDouble(poids),Double.parseDouble(taille))
         });
+
         graphView.addSeries(imcValues);
         //manuel limits of XY axis
         graphView.getViewport().setYAxisBoundsManual(true);

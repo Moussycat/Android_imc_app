@@ -8,6 +8,18 @@
         tools:context=".thirdActivity">
 
     <TextView
+            android:text="Taille en cm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@+id/my_toolbar2" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"/>
+    <TextView
+            android:text="Poids en kg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/graphiqueView" android:layout_marginStart="82dp"
+            app:layout_constraintStart_toEndOf="@+id/textView5"/>
+    <TextView
             android:text="Sous-poids"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/textView7"
@@ -31,10 +43,10 @@
             tools:ignore="MissingConstraints" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:background="@color/teal_700"/>
     <com.jjoe64.graphview.GraphView
-            android:layout_width="396dp" android:layout_height="531dp"
+            android:layout_width="404dp" android:layout_height="491dp"
             android:id="@+id/graphiqueView"
             app:layout_constraintTop_toBottomOf="@+id/my_toolbar2" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp" android:layout_marginEnd="16dp"/>
+            android:layout_marginTop="16dp" android:layout_marginEnd="12dp"/>
     <TextView
             android:text="Obèsité"
             android:layout_width="wrap_content"
